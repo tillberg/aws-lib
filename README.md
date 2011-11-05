@@ -25,10 +25,13 @@ The following snippet implements an ec2 client and makes a call to DescribeInsta
 
     var aws = require("aws-lib");
 
-    ec2 = aws.createEC2Client(yourAccessKeyId, yourSecretAccessKey);
+    var ec2 = aws.EC2Client({
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID
+    });
 
-    ec2.call("DescribeInstances", {}, function(result) {
-      console.log(JSON.stringify(result));
+    ec2.describeInstances({}, function(err, result) {
+      console.dir(result);
     })
 
 Which returns a JSON response similar to:
