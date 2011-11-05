@@ -1,6 +1,16 @@
 Node.js library for the Amazon Web Services
 =====
 
+## About this fork ##
+
+I forked and rewrote much of this library to support two goals, in support of developing [Legion](https://github.com/tillberg/legion):
+- Properly return error values as the first callback argument (and return errors as appropriate)
+- Do something a little nicer than having a single .call(...) method for all requests
+
+Then I noticed [aws2js](https://github.com/SaltwaterC/aws2js)
+
+-------
+
 A simple [Node.js](http://github.com/ry/node) library to communicate with the Amazon Web Services API.
 
 This version of aws-lib requires Node v0.4! You can use v0.0.4 if you need to stick to Node v2.6.
